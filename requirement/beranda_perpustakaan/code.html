@@ -1,0 +1,418 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Scholarly Library | Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#6e5c00",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#0e0200",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-container-highest": "#e2e2e2",
+                        "outline-variant": "#c1c6d6",
+                        "on-primary-fixed-variant": "#004493",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed": "#ffdbcb",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#001a41",
+                        "surface-tint": "#005bc0",
+                        "on-secondary-fixed-variant": "#544600",
+                        "surface-container-high": "#e8e8e8",
+                        "tertiary": "#9e4300",
+                        "primary": "#005bbf",
+                        "surface-container-low": "#f3f3f4",
+                        "error": "#ba1a1a",
+                        "background": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-primary-container": "#ffffff",
+                        "primary-container": "#1a73e8",
+                        "primary-fixed-dim": "#adc7ff",
+                        "on-surface": "#1a1c1c",
+                        "secondary-fixed": "#ffe16d",
+                        "surface-bright": "#f9f9f9",
+                        "secondary": "#705d00",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#c55500",
+                        "outline": "#727785",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-tertiary-fixed-variant": "#783100",
+                        "primary-fixed": "#d8e2ff",
+                        "on-surface-variant": "#414754",
+                        "inverse-primary": "#adc7ff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#341100",
+                        "surface-variant": "#e2e2e2",
+                        "inverse-surface": "#2f3131",
+                        "tertiary-fixed-dim": "#ffb691",
+                        "on-background": "#1a1c1c",
+                        "surface-dim": "#dadada",
+                        "on-secondary-fixed": "#221b00",
+                        "secondary-container": "#fcd400",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "container-max": "1280px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "stack-md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-16 md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface border-b border-outline-variant flex justify-between items-center h-14 px-margin-mobile md:px-margin-desktop">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<h1 class="font-headline-sm text-[20px] md:text-headline-sm font-bold text-primary">Scholarly Library</h1>
+</div>
+<nav class="hidden md:flex items-center gap-stack-md h-full">
+<a class="h-full flex items-center px-2 text-primary border-b-2 border-primary font-label-md text-label-md" href="#">Home</a>
+<a class="h-full flex items-center px-2 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">Search</a>
+<a class="h-full flex items-center px-2 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">My Books</a>
+<a class="h-full flex items-center px-2 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="mt-14 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md">
+<!-- Hero Section with Search -->
+<section class="relative rounded-xl overflow-hidden mb-stack-lg min-h-[400px] flex items-center justify-center text-center p-8">
+<div class="absolute inset-0 bg-primary-container z-0">
+<img class="w-full h-full object-cover opacity-20 mix-blend-overlay" data-alt="A sprawling, majestic library interior with high ceilings and floor-to-ceiling wooden bookshelves filled with thousands of leather-bound volumes. The space is illuminated by warm, ethereal light streaming through large arched windows, creating a scholarly and serene atmosphere. The overall aesthetic is professional and modern, using deep blues and crisp whites to emphasize a contemporary digital library feel. Minimalist architectural lines frame the grand collection, conveying intellectual depth and accessibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2DP6mc5urFPZZjbexPQ6_N7mCVutAlTzGx_J98fpYzYHFdMfqbhV_TVeWVcfZzQbiPra38h3-fAx7hSYWrFbRM4s-vCqD8qn0Sn3DTDbN4zTvxllsteUNSG5Anm6OAW_4k5cIPkL7hTDyd5BUxX_gk6llNkRN_dbexPWIDVlXuhJZz4gq4bdOzdgjKc1Cx65YPmAE197JWAivejZx31QyvLvmlLGazKpcO3_tAeyHuIo_omIU6FJIYwDzzGzAVnq1lMQEBbdssYs7">
+</div>
+<div class="relative z-10 w-full max-w-3xl">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-stack-sm drop-shadow-md">Discover Your Next Great Insight</h2>
+<p class="font-body-lg text-white/90 mb-stack-md max-w-xl mx-auto">Access millions of digital resources, academic papers, and timeless classics from our curated repository.</p>
+<!-- Search Bar -->
+<div class="relative flex items-center h-14 bg-surface rounded-lg shadow-sm border border-outline-variant focus-within:border-primary transition-all p-1">
+<span class="material-symbols-outlined px-4 text-outline" data-icon="search">search</span>
+<input class="flex-grow bg-transparent border-none focus:ring-0 text-on-surface font-body-md placeholder:text-on-surface-variant" placeholder="Search by title, author, or ISBN..." type="text">
+<div class="hidden sm:flex items-center border-l border-outline-variant px-4 h-8 gap-2 cursor-pointer text-on-surface-variant hover:text-primary transition-colors">
+<span class="font-label-md text-label-md">Categories</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</div>
+<button class="bg-secondary-container text-on-secondary-container px-6 h-full rounded-lg font-label-md text-label-md font-bold hover:scale-[1.02] active:scale-95 transition-transform ml-1">
+                        Search
+                    </button>
+</div>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section class="mb-stack-lg">
+<div class="flex justify-between items-end mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">Explore by Subject</h3>
+<a class="text-primary font-label-md text-label-md hover:underline" href="#">View All Categories</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter h-auto md:h-64">
+<div class="group relative overflow-hidden rounded-lg bg-surface-container border border-outline-variant cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-40" data-alt="Close up of a classic fountain pen resting on an open vintage book with elegant handwritten script. The lighting is soft and golden, suggesting a quiet study at dusk. The mood is nostalgic and literary, capturing the essence of classic fiction. The color palette incorporates soft warm tones and deep shadows to create depth and focus on the textural details of paper and ink." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBL3O1k6kwCiJWl_MiR4zsmPj3e3ho1B-9ESjI_b9NSeepVtdH_VBVm9Swbyl_cDK7_dhSwVUyskZ9mjrTBtwLjgTu8oD2zyHTCrR2y7v0RIYQP3LPl-f13yOZj5upRQIbmf6ToPhCVFqx1Wh0LO4Jg4R0XxyO8LOujR5Yxjsxu-lGPkonMF8cDnKSE_SNlrd8qcNuPUsmf4r79Koi1DuGtSiXVC35uQolab3Qog3d-WrK_zBa2gA9shUkNLmsyttZMIniGm9-yhNn">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+<p class="text-white font-headline-sm text-headline-sm mb-1">Fiction</p>
+<p class="text-white/80 font-label-sm text-label-sm">4.2k Books</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-lg bg-surface-container border border-outline-variant cursor-pointer md:row-span-2">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-40" data-alt="A clean, modern laboratory setting with high-end scientific equipment like microscopes and glass flasks filled with clear blue liquid. Bright, sterile white lighting creates a professional and futuristic atmosphere. The visual style is crisp and high-contrast, representing clarity and empirical research. Precise focus on geometric glass shapes reinforces a sense of order and scientific discovery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAlJgXaxolHWuTwxSbdlU3lg7BUTknmUNI1enmMSf_VDKqOF9sx_pDNZr8dzph-uN8kukpBHwZtRDdkZUFmoC7LYzjFsxa8A-_TZvTvUgB1kWSqR4SO67cI3HiJEpU2-1E9SDkcezqVlBNrf0QILVtx2J0do5DeX7IBSQL3Sj6le3O9hLH1jOXi8BHdYXHIM2fxQ3Cnd6Nfq9JDHvE-t3ptZiOpQgsAJocKI1m24yr2A0iHxpfPnUYSdGhXpSvDC2prBMys1abbFh-">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+<p class="text-white font-headline-sm text-headline-sm mb-1">Science</p>
+<p class="text-white/80 font-label-sm text-label-sm">2.8k Papers</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-lg bg-surface-container border border-outline-variant cursor-pointer">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-40" data-alt="An antique map spread out on a heavy oak table next to an old-fashioned brass compass and a pair of spectacles. The scene is rich with textures of parchment and worn metal. Warm, side-lighting highlights the topographical details of the map, evoking a sense of exploration and historical investigation. The palette is dominated by ochres, sepias, and deep wood tones for a timeless feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJCmNZV4aAuiyTJTRWAXLvOC5xhKGS5IjQid1DL6-u9yZQlHVdyqTT_BZMkZYIkMPqGhPz9lA7KTaJ--lnGgM6sGfMi8jjBKs5jlhwPAqXO3VGFYJnq26meAKApaVLPFRPXQ-0LYZfy36N1r3qyLSi88BEfhJHHhWzz70U_ORHqhEnpQYbu2uF54OfDcClP17BLIkPjwM3B4zhJI64tnpBtPURdmdG0Z_oYvbbBKY9Z071-EVF3gTM342ThwcrXkwrQOluv1O8o2nA">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-4">
+<p class="text-white font-headline-sm text-headline-sm mb-1">History</p>
+<p class="text-white/80 font-label-sm text-label-sm">1.5k Archives</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-lg bg-surface-container border border-outline-variant cursor-pointer md:col-span-2 md:h-32">
+<div class="absolute inset-0 bg-primary/10"></div>
+<div class="relative flex items-center justify-between p-4 h-full">
+<div>
+<p class="text-on-surface font-headline-sm text-headline-sm mb-1">Architecture</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Design &amp; Structure</p>
+</div>
+<span class="material-symbols-outlined text-primary text-[48px] opacity-20" data-icon="architecture">architecture</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Books (Horizontal Scrolling on Mobile) -->
+<section class="mb-stack-lg">
+<div class="flex items-center gap-2 mb-stack-md">
+<span class="material-symbols-outlined text-secondary" data-icon="trending_up">trending_up</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Trending This Week</h3>
+</div>
+<div class="flex overflow-x-auto md:grid md:grid-cols-4 lg:grid-cols-5 gap-gutter pb-4 hide-scrollbar">
+<!-- Book Card 1 -->
+<div class="min-w-[200px] flex-shrink-0 flex flex-col group cursor-pointer">
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant mb-3 shadow-sm group-hover:shadow-md transition-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A book cover with a minimalist aesthetic featuring an abstract blue and gold geometric design against a clean white background. The typography is modern and elegant, suggesting a high-end scholarly work on philosophy or design. The lighting is even and soft, emphasizing the clean lines and premium paper texture of the volume. It rests on a pale gray surface with a gentle shadow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCW6oFw3i8cp7Sahz2Zw4n4Xf0gJWPTiIHwxlCg60ZgVcF1PzoPmd-LgoCP8e20859gNG48BKWLlMqpypB8PpJONuLRJpxMrhsXaDk9zX4N0ShJM8HvxpecTcMNxJx8EgfxAMT7r-Y7TWnHmWF8urZvXBM8wasYY34o7caaGRX0GD1aw1k5FEdcIpHYkvyZL9PG-BGD2yJeJw_VDPRRfDiKTqSxhFzVWkgxpfnEfHA24nD9nPks35tXKSL653p1lHLvHNHRS5REtyEd">
+<div class="absolute top-2 right-2 bg-secondary-container text-on-secondary-container px-2 py-1 rounded-sm font-label-sm text-[10px] uppercase">New</div>
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface line-clamp-1 mb-1">Echoes of Enlightenment</h4>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">Dr. Sarah Jenkins</p>
+<div class="flex items-center gap-1">
+<div class="bg-secondary-container/30 px-2 py-0.5 rounded text-[10px] text-on-secondary-container font-bold">AVAILABLE</div>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="min-w-[200px] flex-shrink-0 flex flex-col group cursor-pointer">
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant mb-3 shadow-sm group-hover:shadow-md transition-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A thick hardback book with a dark, textured green fabric cover and embossed gold lettering on the spine. It sits prominently on a dark wood surface in a moody, low-light study environment. A single spotlight from above highlights the gold foil, suggesting rare and valuable historical content. The mood is serious, prestigious, and deeply intellectual, focusing on the weight of tradition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0Oh0eE28RSCJ1Ut-CR6Y68yH3GJHwUuYxfANJfAMVRVOAk_UzkwborLW4SVUDI0lNtMpVHIQyNd4zaAULl6Ux5BcWBW8mtjWLpS7z_aMQpaKfKFjjzxA33IJIcoIoy7IdjCqJSFQUA-GQ-p7il3lgV5PT59O4qBny-iHBC56EiJdAUrAKs2VWqnpxsKG2KbsIM1WuEQia5NYu_niJcVC7d_7dArK8iFpY7a4rl0YuhS-vFrl92cNjgM2SG180hJKBFIdSEDta9MPU">
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface line-clamp-1 mb-1">Quantum Horizons</h4>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">Markus Vane</p>
+<div class="flex items-center gap-1">
+<div class="bg-primary/10 px-2 py-0.5 rounded text-[10px] text-primary font-bold">DIGITAL ONLY</div>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="min-w-[200px] flex-shrink-0 flex flex-col group cursor-pointer">
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant mb-3 shadow-sm group-hover:shadow-md transition-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An open book with pages fanned out in a circular pattern, creating an intricate geometric shape that suggests movement and creativity. The lighting is high-key and bright, with a pure white background that isolates the object. The color palette is minimal, focusing on the cream color of the paper and the sharp black lines of the text. The overall feeling is one of clarity, openness, and modern educational design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsECX6WWpDerLJtR95n5gFIaDg3Ua5DyOrjJa2LF6b7c7dLsuFAOIT4pQdUGUlqZz4RDm7zzmm6L0bZ3BZzwYByYUBajsAxCJjBjAnbxeSz0Bq1ma6K7BENyaiNRCfFetnDTbsC7ZY9B6g9CfSrRnthh_gpLH5yktyipeWAfRelScNZS8y3rkeKx-bEqYwUlr6tn-2L4YDg_oN-IOy69CxxnftVxaYobw9hyz8CQIb7JH_VRdoAC6BFq_02oJd--rg9m5ZHRQgPemD">
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface line-clamp-1 mb-1">Architecture of Silence</h4>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">Elena Rossi</p>
+<div class="flex items-center gap-1">
+<div class="bg-secondary-container/30 px-2 py-0.5 rounded text-[10px] text-on-secondary-container font-bold">AVAILABLE</div>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="min-w-[200px] flex-shrink-0 flex flex-col group cursor-pointer">
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant mb-3 shadow-sm group-hover:shadow-md transition-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern book cover featuring a vivid splash of red paint against a stark charcoal background. The title is set in a bold, white sans-serif font that cuts through the visual noise. The lighting is dramatic and directional, creating a sense of urgency and contemporary edge. This book represents modern social theory or political science, conveyed through high-contrast graphic design and professional minimalist art style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD23L39jX_KEqj22221NbHw4cicjjEY8022jRRUV50l6UoIuz4Zzp3etysbq0anBatvGMh2pN1OfNJMD_ORwyDqe6yOvqAmDLdFWWJgdETF4L8qlSIzEczP907IgSizpIrh1kD1aCmQW6klC2fqxADAf4Mmhs8UW7yg8XAr8_p8M5u-mDdf5pEBOK5umGiyv5tj1cjxfH1x605_rDhye14nJENqCUty3RJUFe2eSGBzc0lu4DWWapTLIxRsN38mLeHM0bPqP7ras5u7">
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface line-clamp-1 mb-1">Urban Resilience</h4>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">Dr. J. Thompson</p>
+<div class="flex items-center gap-1">
+<div class="bg-error/10 px-2 py-0.5 rounded text-[10px] text-error font-bold">ON LOAN</div>
+</div>
+</div>
+<!-- Book Card 5 -->
+<div class="min-w-[200px] flex-shrink-0 flex flex-col group cursor-pointer hidden lg:flex">
+<div class="relative aspect-[2/3] rounded-lg overflow-hidden border border-outline-variant mb-3 shadow-sm group-hover:shadow-md transition-shadow bg-surface-container-low">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A book stack featuring three volumes with varying shades of blue and gray spines. They are arranged on a white marble surface, illuminated by natural sunlight from a nearby window which casts soft, long shadows. The setting is bright and airy, reflecting a high-end academic office or a modern home library. The aesthetic is clean and organized, focusing on the physical beauty of printed media in a digital world." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg1KNH0D9fbna_Fi5s_5An9ZwNrOkDORZoOsqC1qcF6hkwd2RrRry4p1ZuzyC0V89OQmIzEl5Y7nNZOI7HS8uRfxquyo5cdTdOQvaoITJD8aCZDTd-m_5JQPImRlbvBtK3EStfTeOXCSKRrssC_7xisbfjGXz3uW2SOUrtEZJDlVZeEPQIVjVp8USjl6jnDYO1Y_N1AFSpdpuGU2MG99sL-o_1t2Ux-e4lwezGtROf1F6hSlqVVhmmvK0N_mTcM4SV4wpzpnQhKzg8">
+</div>
+<h4 class="font-headline-sm text-[16px] text-on-surface line-clamp-1 mb-1">The Digital Nomad</h4>
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">K.L. Wright</p>
+<div class="flex items-center gap-1">
+<div class="bg-secondary-container/30 px-2 py-0.5 rounded text-[10px] text-on-secondary-container font-bold">AVAILABLE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- New Arrivals Section with Asymmetric Layout -->
+<section class="mb-stack-lg flex flex-col md:flex-row gap-gutter">
+<div class="md:w-1/3 bg-primary rounded-xl p-8 text-white flex flex-col justify-between">
+<div>
+<h3 class="font-display-lg-mobile text-display-lg-mobile mb-4">Fresh from the Presses</h3>
+<p class="opacity-80 font-body-md mb-8">This month's latest additions include groundbreaking research in AI and exclusive first-editions of modern poetry.</p>
+</div>
+<button class="bg-white text-primary px-6 py-3 rounded-lg font-bold text-label-md hover:bg-opacity-90 transition-all self-start">Browse Latest</button>
+</div>
+<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-gutter">
+<!-- Arrival Item 1 -->
+<div class="flex gap-4 p-4 bg-surface border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden rounded shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A small, thin poetry book with a delicate cream-colored paper cover and a single line of hand-drawn minimalist art. The lighting is extremely soft, creating a dreamlike quality. The focus is on the paper's fine grain and the simplicity of the cover design, suggesting intimate and thoughtful content. The color palette is neutral and light, aligning with a modern light-mode library aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPijVCPoalys_zI-Ba7-j3h4DFLxYJO6Cc4uEHPQhZ4xYY8VPPxN1N9ahpfStsXIkFzeO-2UVq-Tj5bU4YkrpjfwAmYPSGRyQrjESOU-LY07zEOpViFcxJwccNgJjo_F4KQjfkTlmNG0bOuxRSQyJayb-z4rugJRTGWcHsIm4DM23CJlaRDp2RONCYKGfzPHSUaEN4Gy3d2weYDL0VACiDAbAHkI58V7BXWlmEKI-M426g6I1eB_Jn3scvg_jE60axmbwgFW4ZWXAu">
+</div>
+<div>
+<span class="text-primary font-label-sm text-[10px] font-bold uppercase tracking-wider">Poetry</span>
+<h4 class="font-headline-sm text-[18px] text-on-surface mt-1 mb-1">Windswept Verses</h4>
+<p class="text-on-surface-variant font-body-md text-sm line-clamp-2">A collection of previously unpublished works from the 2024 Literature Prize winner.</p>
+</div>
+</div>
+<!-- Arrival Item 2 -->
+<div class="flex gap-4 p-4 bg-surface border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden rounded shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A book titled 'Modern Data Science' with a cover featuring a glowing network of connected blue dots on a dark background. The design is sleek and technical, with white sans-serif typography. The image has a futuristic feel, with subtle digital artifacts and light leaks that suggest complexity and cutting-edge information. The composition is clean and centers the technological theme for a library setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu4Wi4SBBJequG4ZbKFiT2ikxwFb9jh9BVCk12_36fBXAGCyCnMnfF5U_72i6XDkikoHOcQ1opoK786AUDpf43DFQBhY3fXoA1BnJxR0xqUUdCh6hIAsPRCX-NzJxiQL-ozOHJiGMe-1iWcqxBmnn0qL_kilELlC2Vvl88m_1ZIcNPFRlGqwgwvJqlz5V6WrCOdiefbfT_0K42BOsv2j28HsKN-1beWagnmmQCDVDFqMND0Spn_Zfh5J-dxqUOwI0y8Ij_b6tF49fY">
+</div>
+<div>
+<span class="text-primary font-label-sm text-[10px] font-bold uppercase tracking-wider">Technology</span>
+<h4 class="font-headline-sm text-[18px] text-on-surface mt-1 mb-1">Neural Frontiers</h4>
+<p class="text-on-surface-variant font-body-md text-sm line-clamp-2">Understanding the shift in computational logic during the second wave of AI.</p>
+</div>
+</div>
+<!-- Arrival Item 3 -->
+<div class="flex gap-4 p-4 bg-surface border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden rounded shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A thick volume with a blue spine and gold lettering, slightly worn at the corners, resting on a contemporary white glass desk. Next to it is a small glass of water and a pair of modern reading glasses. The lighting is bright and clear, emphasizing a productive morning atmosphere. This image represents scholarly depth combined with modern accessibility and a professional work environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLno-2xakSy1HRBhbfi5MiwjutD6U5rjJfWbiCyXht5iqsUPRUlIoERilNfMaxYyzK9IsJii_AcDlyBUeQfgaJuSCQMkKJLJLB-j5zgwYsr2hvf4kALs1AbKA3Y2InQOcCK5XXJNt47S9Ns2qad3EXSDdpdmZfaDOfOHE7VlLtF7RiDq5R975ijLX4Z31XgQNiTtKo9ppJKlHxO5JoJ_F0AxWtpsgDSC9S-U6i0P8W84bx2a7U5RV55VdkF14-j2HqFG5SWhC5j5l-">
+</div>
+<div>
+<span class="text-primary font-label-sm text-[10px] font-bold uppercase tracking-wider">History</span>
+<h4 class="font-headline-sm text-[18px] text-on-surface mt-1 mb-1">Lost Cities</h4>
+<p class="text-on-surface-variant font-body-md text-sm line-clamp-2">New archeological findings from the submerged coastal regions of the Mediterranean.</p>
+</div>
+</div>
+<!-- Arrival Item 4 -->
+<div class="flex gap-4 p-4 bg-surface border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer">
+<div class="w-24 h-32 flex-shrink-0 overflow-hidden rounded shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A cookbook cover featuring a stunning, overhead high-resolution photograph of fresh green vegetables and vibrant red tomatoes on a clean marble countertop. The typography is elegant and clean, suggesting a modern take on nutrition and culinary art. The lighting is bright and appetizing, with natural colors popping against the white background. The overall style is healthy, professional, and visually engaging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN5I-c620MIbWVht2HyBNCClIL_gJ48x8AHQlxFTOonjbgSrcE6cLXejjHIeKkKX5QD9cMzGnfA4pA5P2pEAYwD8vtMYq8txylLnl-NHNpV28zGlMcE8RGgTQVoFtwW9-v-Z-XVZ435hSoUcvbedaUdUwrxfdtYQBsFSRbJTW7uQGSKu1rQ4EK1CjTAuqz_2qMtpkLfuNMuG3JBB9w9Q8BVdmo7C329qvf0q8G02s41gGg_Sr-JZFVYTOPdVNngjKzn8XJa-7WfyWl">
+</div>
+<div>
+<span class="text-primary font-label-sm text-[10px] font-bold uppercase tracking-wider">Culinary Arts</span>
+<h4 class="font-headline-sm text-[18px] text-on-surface mt-1 mb-1">Gastronomy 2.0</h4>
+<p class="text-on-surface-variant font-body-md text-sm line-clamp-2">Molecular biology meets the traditional kitchen in this revolutionary guide.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community Section -->
+<section class="bg-surface-container rounded-xl p-8 md:p-12 text-center border border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Join the Scholars Society</h3>
+<p class="text-on-surface-variant font-body-md mb-8 max-w-2xl mx-auto">Get monthly reading recommendations, early access to digital archives, and invitations to exclusive author webinars.</p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+<input class="flex-grow px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-0" placeholder="Enter your email" type="email">
+<button class="bg-primary text-white px-8 py-3 rounded-lg font-bold text-label-md hover:bg-primary-container transition-colors">Subscribe</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface py-12 px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<h4 class="font-headline-sm text-[20px] font-bold text-primary">Scholarly</h4>
+</div>
+<p class="text-on-surface-variant text-sm">Empowering minds through open access to global knowledge since 1998.</p>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-on-surface">Resources</h5>
+<ul class="space-y-2 text-on-surface-variant text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Digital Archives</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Academic Journals</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Research Tools</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Inter-library Loan</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-on-surface">Community</h5>
+<ul class="space-y-2 text-on-surface-variant text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Author Events</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Reading Groups</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Volunteer</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Donations</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-4 text-on-surface">Contact</h5>
+<ul class="space-y-2 text-on-surface-variant text-sm">
+<li class="flex gap-2 items-center"><span class="material-symbols-outlined text-sm" data-icon="mail">mail</span> info@scholarly.lib</li>
+<li class="flex gap-2 items-center"><span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span> University District, CA</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto pt-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-on-surface-variant">
+<p>© 2024 Scholarly Digital Library. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary" href="#">Privacy Policy</a>
+<a class="hover:text-primary" href="#">Terms of Service</a>
+<a class="hover:text-primary" href="#">Accessibility</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant shadow-sm flex justify-around items-center h-16 px-margin-mobile">
+<a class="flex flex-col items-center justify-center text-primary font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-label-sm font-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="book_5">book_5</span>
+<span class="text-label-sm font-label-sm">My Books</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button, a, .group').forEach(el => {
+            el.addEventListener('click', (e) => {
+                const circle = document.createElement('div');
+                circle.className = 'ripple';
+                // Ripple effect logic would go here if needed
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        const searchBar = searchInput.parentElement;
+        
+        searchInput.addEventListener('focus', () => {
+            searchBar.classList.add('ring-2', 'ring-primary/20');
+        });
+        
+        searchInput.addEventListener('blur', () => {
+            searchBar.classList.remove('ring-2', 'ring-primary/20');
+        });
+    </script>
+</body></html>

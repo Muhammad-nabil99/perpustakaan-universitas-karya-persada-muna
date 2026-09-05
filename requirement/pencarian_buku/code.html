@@ -1,0 +1,346 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Scholarly Library | Search Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#6e5c00",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#0e0200",
+                    "secondary-fixed-dim": "#e9c400",
+                    "surface-container-highest": "#e2e2e2",
+                    "outline-variant": "#c1c6d6",
+                    "on-primary-fixed-variant": "#004493",
+                    "surface": "#f9f9f9",
+                    "tertiary-fixed": "#ffdbcb",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#001a41",
+                    "surface-tint": "#005bc0",
+                    "on-secondary-fixed-variant": "#544600",
+                    "surface-container-high": "#e8e8e8",
+                    "tertiary": "#9e4300",
+                    "primary": "#005bbf",
+                    "surface-container-low": "#f3f3f4",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "on-primary-container": "#ffffff",
+                    "primary-container": "#1a73e8",
+                    "primary-fixed-dim": "#adc7ff",
+                    "on-surface": "#1a1c1c",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-bright": "#f9f9f9",
+                    "secondary": "#705d00",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#c55500",
+                    "outline": "#727785",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-tertiary-fixed-variant": "#783100",
+                    "primary-fixed": "#d8e2ff",
+                    "on-surface-variant": "#414754",
+                    "inverse-primary": "#adc7ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#341100",
+                    "surface-variant": "#e2e2e2",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "on-background": "#1a1c1c",
+                    "surface-dim": "#dadada",
+                    "on-secondary-fixed": "#221b00",
+                    "secondary-container": "#fcd400",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-lg": "48px",
+                    "container-max": "1280px",
+                    "margin-desktop": "40px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "stack-md": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #f9f9f9;
+        }
+        .book-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-color: #005bbf;
+        }
+        .sticky-search {
+            position: sticky;
+            top: 56px;
+            z-index: 40;
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant flex justify-between items-center h-14 px-margin-mobile md:px-margin-desktop w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">menu_book</span>
+<h1 class="font-headline-sm text-headline-sm-mobile font-bold text-primary dark:text-primary-fixed">Scholarly Library</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="h-full flex items-center px-2 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="h-full flex items-center px-2 text-primary dark:text-primary-fixed border-b-2 border-primary font-label-md text-label-md" href="#">Search</a>
+<a class="h-full flex items-center px-2 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">My Books</a>
+<a class="h-full flex items-center px-2 text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md" href="#">Profile</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant active:opacity-80 transition-opacity">account_circle</button>
+</div>
+</header>
+<main class="pt-14 pb-20 md:pb-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Search & Filter Section -->
+<div class="py-stack-md sticky-search bg-surface/95 backdrop-blur-sm -mx-margin-mobile px-margin-mobile md:-mx-margin-desktop md:px-margin-desktop border-b border-outline-variant/30">
+<div class="flex flex-col gap-4">
+<!-- Search Bar Component -->
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-low border border-outline-variant rounded-sm focus:outline-none focus:ring-0 focus:border-primary transition-all font-body-md text-body-md" placeholder="Search for titles, authors, or ISBN..." type="text" value="Contemporary Architecture">
+</div>
+<!-- Filters -->
+<div class="flex flex-wrap gap-stack-sm">
+<div class="relative flex-1 min-w-[140px]">
+<select class="w-full h-10 px-3 pr-10 bg-surface border border-outline-variant rounded-sm appearance-none font-label-md text-label-md focus:border-primary focus:ring-0">
+<option>All Authors</option>
+<option>Zaha Hadid</option>
+<option>Norman Foster</option>
+<option>Rem Koolhaas</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[20px]">expand_more</span>
+</div>
+<div class="relative flex-1 min-w-[140px]">
+<select class="w-full h-10 px-3 pr-10 bg-surface border border-outline-variant rounded-sm appearance-none font-label-md text-label-md focus:border-primary focus:ring-0">
+<option>All Genres</option>
+<option>Architecture</option>
+<option>Fine Art</option>
+<option>Urban Planning</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[20px]">expand_more</span>
+</div>
+<div class="relative flex-1 min-w-[140px]">
+<select class="w-full h-10 px-3 pr-10 bg-surface border border-outline-variant rounded-sm appearance-none font-label-md text-label-md focus:border-primary focus:ring-0">
+<option>All Years</option>
+<option>2024</option>
+<option>2023</option>
+<option>2022</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-outline text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Results Header -->
+<div class="flex items-center justify-between mt-stack-md mb-stack-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">Search Results (42)</h2>
+<div class="flex items-center gap-2 text-outline font-label-sm text-label-sm uppercase tracking-wider">
+                Sort by: 
+                <button class="text-primary font-bold flex items-center">Relevance <span class="material-symbols-outlined text-[16px]">arrow_drop_down</span></button>
+</div>
+</div>
+<!-- Results Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mt-4">
+<!-- Book Card 1 -->
+<div class="book-card group bg-surface border border-outline-variant p-4 flex gap-4 transition-all duration-200 cursor-pointer rounded-sm">
+<div class="w-24 h-36 flex-shrink-0 bg-surface-container overflow-hidden rounded-sm shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist book cover for a title on contemporary architecture, featuring a single dramatic geometric shadow cast across a white textured surface. The aesthetic is highly scholarly and professional, with elegant sans-serif typography set against a neutral, high-key background to evoke a sense of modern academic excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBzfhYM4plot7M0BgBYoyYNgb9gYeZGv5NEqNAwRMGUvYZKLcHc5QEBM1g8guAORpHtKZ6tR2vCh3ax9W7DBDnKUmbB7WpTst_8OLqaxUCDVxslcaL9Nwx-GSNFA5AM8rXnkXSKob92HAa1y41XO1JqD9Uy-36Y5KGy4XNmi3xhXkyxL4kJHKLNn77KYEvaVMagJrsHyphuQQp4UF6m3-OvYg-lOA_-rBwSE8EcxY3CyD64X00oCZ2XicgPmLFIRZHFn_c0j6szXfl">
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile leading-tight text-on-surface group-hover:text-primary transition-colors">The Structure of Light</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Richard Kelly</p>
+<div class="mt-2 inline-flex items-center px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded-sm">Available</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Published: 2021</span>
+<button class="material-symbols-outlined text-primary text-[20px] hover:scale-110 transition-transform">bookmark_add</button>
+</div>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="book-card group bg-surface border border-outline-variant p-4 flex gap-4 transition-all duration-200 cursor-pointer rounded-sm">
+<div class="w-24 h-36 flex-shrink-0 bg-surface-container overflow-hidden rounded-sm shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A sophisticated book cover featuring a complex architectural floor plan overlaying a sepia-toned photograph of a modern library atrium. The image uses a restrained corporate color palette of navy blue and soft greys. The lighting is bright and airy, creating a professional and intellectual atmosphere suitable for an academic resource." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZfGHzO-Rou0LxbGHDfpt2yD1IZT3halvEMaDQWlNrfmuzqBPbRF5M_om0YGj1suEvqr0FjDHza-keIxcFXrdBhzZjkdRtwSt8ld9VplLKCmua3F_zCFU3IS1nQ2LauAxJm9Cqs2RMwCIGySB1FcTcUZCCXbRfMhpaIJIy2vNsUgl_X1UnL5uKohZ2J7Wk4hQf-xfxvENdVyI-zcVJhH5G94Ifqu6ehI8EQn-2H4jd6_tYAj2eTKpiC-rOG8bNtIQHQ5FWEcmtH7S">
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile leading-tight text-on-surface group-hover:text-primary transition-colors">Urban Density Models</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Jane Jacobs Revisted</p>
+<div class="mt-2 inline-flex items-center px-2 py-0.5 bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm rounded-sm">On Loan</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Published: 2023</span>
+<button class="material-symbols-outlined text-primary text-[20px] hover:scale-110 transition-transform">bookmark_add</button>
+</div>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="book-card group bg-surface border border-outline-variant p-4 flex gap-4 transition-all duration-200 cursor-pointer rounded-sm">
+<div class="w-24 h-36 flex-shrink-0 bg-surface-container overflow-hidden rounded-sm shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A professional textbook cover design showing an abstract close-up of a glass building facade reflecting a clear blue sky. The visual style is crisp and modern, emphasizing clean lines and functional minimalism. The color scheme is dominated by cool blues and pristine whites, conveying a sense of clarity and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-8Me5l22Hm1C_7p5QGMnQsiWrA4xvLbfNcSVvz5l60ZOeXDcAu7aFvMwz6KUGSa57NwQBsTKEpcD1TiTE5umh1QTjQLsm5udxYsPKG2Yu5fpb0mC8dtmz6BNoqgva5gCrZalnIh9egeXyYnnohARwBtSY0BeXXW-8Goi_J6QgL-B871QQfi8y8n0wqWFy_GyKPzCPYbBi4Cw4by9p3wJiR80VXfPMCzZr8uM5tL9uNYwr9g4W8mHI-znmHRgumbATF1rfe1i--bq9">
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile leading-tight text-on-surface group-hover:text-primary transition-colors">Sustainable Glass</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Marcus Aurelius Thorne</p>
+<div class="mt-2 inline-flex items-center px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded-sm">Available</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Published: 2020</span>
+<button class="material-symbols-outlined text-primary text-[20px] hover:scale-110 transition-transform">bookmark_add</button>
+</div>
+</div>
+</div>
+<!-- Book Card 4 -->
+<div class="book-card group bg-surface border border-outline-variant p-4 flex gap-4 transition-all duration-200 cursor-pointer rounded-sm">
+<div class="w-24 h-36 flex-shrink-0 bg-surface-container overflow-hidden rounded-sm shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A modern book cover for a publication on minimalism in design. It features a single, slender black line intersecting a pale grey field, with elegant typography placed in the lower third. The lighting is diffused and soft, creating a high-end corporate aesthetic that feels both scholarly and contemporary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlYrdWUCPwmPburZyD5nE3UaCJHLLwGXMDPdnaG_nINd1Zk2W3eq0Dr6daGOcqzKesCM6eylRB0wH1sEp7nUJXklpNr3l4PI2uVrvhq2Mx6qnfFU5z5SFO0EGjogS4miWZRTZVQ2ho5tLVzyXi-SjHQiOuBFtOruzWad3C6x66EwbVFNztRJAw1W9h8BETdjlmnVoRo7HMxjda_7Xa2vuV-WC1-A0xYI0BdOydCkT00k4aoIFraKq9HnshqSaPEN1nclxXNE_4M7rq">
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile leading-tight text-on-surface group-hover:text-primary transition-colors">Minimalist Atriums</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Elena Rostova</p>
+<div class="mt-2 inline-flex items-center px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded-sm">Available</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Published: 2022</span>
+<button class="material-symbols-outlined text-primary text-[20px] hover:scale-110 transition-transform">bookmark_add</button>
+</div>
+</div>
+</div>
+<!-- Book Card 5 -->
+<div class="book-card group bg-surface border border-outline-variant p-4 flex gap-4 transition-all duration-200 cursor-pointer rounded-sm">
+<div class="w-24 h-36 flex-shrink-0 bg-surface-container overflow-hidden rounded-sm shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="An academic book cover showing a macro shot of architectural paper textures and drafting tools. The mood is serious and intellectual, with a color palette of charcoal grey, white, and primary blue accents. The design is clean and professional, focusing on the precision of academic research." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy-oMB2ssKXHAMKPpUey_WzH58hS0b6p5oJEyiv-T36aO-f__x8xmppk6cmmuNwbpIdtOpHZOxUkHR8gexTg7dOkhydLZhPKzqTifwpSyJdpt2igQU0mt-h1jJf-LmOqWvkmhQZYJ049MFAjjbUpaetNUFCLBDiJfPog2dKdd9IpIHBm8IFMWv6FVufRiCtvgKsoMt_rwS5V6mEKBAEhWh_281tOOe8-IOPObESPdOiBYi9TpVXpVoLM5bQb9_g3wSp4PPJeubGDgL">
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile leading-tight text-on-surface group-hover:text-primary transition-colors">Concrete Solutions</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">David H. Miller</p>
+<div class="mt-2 inline-flex items-center px-2 py-0.5 bg-error-container text-on-error-container font-label-sm text-label-sm rounded-sm">Reserved</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Published: 2019</span>
+<button class="material-symbols-outlined text-primary text-[20px] hover:scale-110 transition-transform">bookmark_add</button>
+</div>
+</div>
+</div>
+<!-- Book Card 6 -->
+<div class="book-card group bg-surface border border-outline-variant p-4 flex gap-4 transition-all duration-200 cursor-pointer rounded-sm">
+<div class="w-24 h-36 flex-shrink-0 bg-surface-container overflow-hidden rounded-sm shadow-sm border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A scholarly book cover featuring an artistic, abstract representation of an open library stack. The imagery uses soft bokeh effects and a primary blue and white color scheme. The composition is balanced and elegant, emphasizing the vastness of knowledge in a modern, professional library environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVLyyesnshGXNmWXGzHmF4fqk2kDc-lHMq3Gq7cNKCuFISvuZYlipX6J3H_xa65LGshSzq3jF3ORzyylJ0V0530kJ1wrq7R3FHXhicm-AdaaFtNokinxVuvMfZ-2SeEbks8vD6gyF5O8P83yAbt3-YUdESPTejmauLwRgpDiAX6UCmSd0df0cYWEbAX-xAH27YGaqrAhgLFl9Jm_chyR64miCcP-xfKYfXdag4I9YO8YCjFz0krWIEEIl4VCC7Mixy36Kiir1b9eQ_">
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm-mobile leading-tight text-on-surface group-hover:text-primary transition-colors">Information Systems</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Sarah P. Bennett</p>
+<div class="mt-2 inline-flex items-center px-2 py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded-sm">Available</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm text-outline">Published: 2024</span>
+<button class="material-symbols-outlined text-primary text-[20px] hover:scale-110 transition-transform">bookmark_add</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More Section -->
+<div class="mt-stack-lg flex justify-center pb-stack-lg">
+<button class="px-8 py-3 bg-primary text-on-primary font-label-md text-label-md rounded-sm hover:opacity-90 active:scale-95 transition-all shadow-sm flex items-center gap-2">
+                Load More Results
+                <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline-variant shadow-sm flex justify-around items-center h-16 w-full px-margin-mobile">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">book_5</span>
+<span class="font-label-sm text-label-sm">My Books</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for filter selection
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', function() {
+                this.classList.add('border-primary');
+                setTimeout(() => this.classList.remove('border-primary'), 1000);
+            });
+        });
+
+        // Simple mock for "Load More"
+        const loadMoreBtn = document.querySelector('button:contains("Load More")');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                loadMoreBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Loading...';
+                setTimeout(() => {
+                    loadMoreBtn.innerHTML = 'Load More Results <span class="material-symbols-outlined text-[18px]">expand_more</span>';
+                }, 1500);
+            });
+        }
+    </script>
+</body></html>

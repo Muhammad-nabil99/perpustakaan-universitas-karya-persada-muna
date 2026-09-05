@@ -1,0 +1,291 @@
+<!DOCTYPE html><html class="light" lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#6e5c00",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#0e0200",
+            "secondary-fixed-dim": "#e9c400",
+            "surface-container-highest": "#e2e2e2",
+            "outline-variant": "#c1c6d6",
+            "on-primary-fixed-variant": "#004493",
+            "surface": "#f9f9f9",
+            "tertiary-fixed": "#ffdbcb",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#001a41",
+            "surface-tint": "#005bc0",
+            "on-secondary-fixed-variant": "#544600",
+            "surface-container-high": "#e8e8e8",
+            "tertiary": "#9e4300",
+            "primary": "#005bbf",
+            "surface-container-low": "#f3f3f4",
+            "error": "#ba1a1a",
+            "background": "#f9f9f9",
+            "surface-container": "#eeeeee",
+            "on-primary-container": "#ffffff",
+            "primary-container": "#1a73e8",
+            "primary-fixed-dim": "#adc7ff",
+            "on-surface": "#1a1c1c",
+            "secondary-fixed": "#ffe16d",
+            "surface-bright": "#f9f9f9",
+            "secondary": "#705d00",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#c55500",
+            "outline": "#727785",
+            "inverse-on-surface": "#f0f1f1",
+            "on-tertiary-fixed-variant": "#783100",
+            "primary-fixed": "#d8e2ff",
+            "on-surface-variant": "#414754",
+            "inverse-primary": "#adc7ff",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#341100",
+            "surface-variant": "#e2e2e2",
+            "inverse-surface": "#2f3131",
+            "tertiary-fixed-dim": "#ffb691",
+            "on-background": "#1a1c1c",
+            "surface-dim": "#dadada",
+            "on-secondary-fixed": "#221b00",
+            "secondary-container": "#fcd400",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "stack-sm": "12px",
+            "stack-lg": "48px",
+            "container-max": "1280px",
+            "margin-desktop": "40px",
+            "base": "8px",
+            "margin-mobile": "16px",
+            "stack-md": "24px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Inter"],
+            "label-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "headline-md": ["30px", { "lineHeight": "38px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #c1c6d6;
+      border-radius: 10px;
+    }
+    .perspective-text {
+      perspective: 1000px;
+    }
+    .active-scale:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant flex justify-between items-center h-14 px-margin-mobile md:px-margin-desktop w-full">
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:opacity-80 transition-opacity" data-icon="arrow_back">arrow_back</button>
+<span class="font-headline-sm text-headline-sm-mobile font-bold text-primary dark:text-primary-fixed">Scholarly Library</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:opacity-80 transition-opacity" data-icon="share">share</button>
+<button class="material-symbols-outlined text-primary dark:text-primary-fixed active:opacity-80 transition-opacity" data-icon="bookmark">bookmark</button>
+</div>
+</header>
+<main class="pt-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Book Cover -->
+<div class="md:col-span-5 lg:col-span-4">
+<div class="relative group aspect-[2/3] w-full bg-surface-container rounded-lg overflow-hidden shadow-sm border border-outline-variant/30">
+<img alt="Book Cover" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-quality studio photograph of a premium hardcover book with a minimalist navy blue and gold design. The book is set against a clean, professional library background with soft, diffused intellectual lighting. The color palette emphasizes corporate blues and warm paper whites, creating a scholarly and reliable atmosphere. The lighting highlights the fine texture of the cover paper and the elegant serif typography of the title." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjTM2vItsclZ1Arn85PYd5sh_QxOZaXzlWOdMWpYJ17CgXoHobqIQ04ksQyXEHyNFJLaT4RQulLPYEj-qqg9VSSG4Qrg1lYoRBowunLP_2Q3KSRIRTvnUpKLeHSB2W5WPVgE2X3jhNsyetZWvs5tEzTwAxgUWjRDyyveqMHlYBQZEl4RuQYKM_EqtbxI7EiozYLYTpTHlmvJi798kt1ooW1O7Ekv8_MuAeFG5IjdzLPNtMZW885Jx6q4756cb5zvceu9gD5vrAjqkL">
+<div class="absolute top-4 right-4 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-sm font-label-sm shadow-sm">
+            Tersedia
+          </div>
+</div>
+</div>
+<!-- Right Column: Details -->
+<div class="md:col-span-7 lg:col-span-8 flex flex-col gap-stack-md">
+<!-- Header Info -->
+<section class="flex flex-col gap-1">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">The Principles of Modern Architecture</h1>
+<p class="font-body-lg text-on-surface-variant">Oleh <span class="font-semibold text-primary">Dr. Julian Sterling</span></p>
+<div class="flex items-center gap-4 mt-2">
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="star_half">star_half</span>
+<span class="ml-2 font-label-md text-on-surface">4.8 (1.2k ulasan)</span>
+</div>
+<div class="h-4 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="history_edu">history_edu</span>
+<span>Non-Fiksi</span>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="h-px w-full bg-outline-variant/30"></div>
+<!-- Synopsis -->
+<section class="flex flex-col gap-stack-sm">
+<h2 class="font-headline-sm text-on-surface">Sinopsis</h2>
+<div class="font-body-md text-on-surface-variant leading-relaxed text-justify">
+            Buku ini menyajikan eksplorasi mendalam mengenai evolusi desain bangunan di abad ke-21. Dr. Sterling menggabungkan teori estetika dengan fungsionalitas teknis, memberikan panduan komprehensif bagi mahasiswa maupun praktisi profesional. Melalui studi kasus dari berbagai benua, pembaca diajak memahami bagaimana ruang membentuk perilaku manusia dan keberlanjutan lingkungan. Pendekatan yang digunakan sangat akademis namun tetap dapat diakses oleh pembaca umum yang memiliki minat dalam seni bina.
+          </div>
+</section>
+<!-- Specifications Grid -->
+<section class="grid grid-cols-2 lg:grid-cols-4 gap-gutter bg-surface-container-low p-6 rounded-xl border border-outline-variant/20">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider">ISBN-13</span>
+<span class="font-label-md text-on-surface font-bold">978-3-16-148410-0</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Halaman</span>
+<span class="font-label-md text-on-surface font-bold">412 Halaman</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Bahasa</span>
+<span class="font-label-md text-on-surface font-bold">Indonesia</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant uppercase tracking-wider">Penerbit</span>
+<span class="font-label-md text-on-surface font-bold">Scholarly Press</span>
+</div>
+</section>
+<!-- Extra Info Tabs (Simplified for UI) -->
+<section class="border-t border-outline-variant/30 pt-4">
+<div class="flex gap-8 mb-4">
+<button class="font-label-md text-primary border-b-2 border-primary pb-2">Detail Pengiriman</button>
+<button class="font-label-md text-on-surface-variant hover:text-primary transition-colors pb-2">Kebijakan Pinjam</button>
+</div>
+<p class="font-body-md text-on-surface-variant italic">
+            "Estimasi ketersediaan fisik di rak: Lantai 2, Bagian Arsitektur, Rak A-12."
+          </p>
+</section>
+</div>
+</div>
+<!-- Recommendations (Bento Style Suggestion) -->
+<section class="mt-stack-lg mb-10">
+<h3 class="font-headline-sm text-on-surface mb-6">Buku Terkait</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Small Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3 shadow-sm border border-outline-variant/30 relative">
+<img alt="Related Book 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A sophisticated book cover featuring geometric abstract art in shades of emerald green and gold. The book is presented in a modern, brightly lit library setting with high-end aesthetic vibes. The lighting is crisp and scholarly, highlighting the professional nature of the architectural textbook collection. Minimalist and corporate styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm_js6JFXMKfS8XiJCYQuAGr9XDtkmVrZnuaEoNO-83RGztlS4BJbhTDzRw1RKPtfBGvxBi5H5s7TsHsc6XQ76omo-JQEI3V10SkoAgtr1rMQ_S7pYpCDnoLxgtZQYH86YjHsAth2Qi4UfJG_0B3zty12MbkpcFjEjIQEqQXzUOVcs5fFY_4adKHFHO1AH_EoTRND_CTm9jmoLKnUF5IfjFsSLtT5NPYCU4-qF3B0o49gbAY-imZcEl9XNQLIo2RCy7dB9sEclHjMw">
+</div>
+<h4 class="font-label-md text-on-surface truncate">Urban Planning 101</h4>
+<p class="font-label-sm text-on-surface-variant">Sarah Jenkins</p>
+</div>
+<!-- Small Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3 shadow-sm border border-outline-variant/30">
+<img alt="Related Book 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A clean, minimalist book cover for a design textbook, featuring a single bold red circle on a white background with elegant black typography. The environment is a professional, light-filled workspace with a soft-focus background of organized library shelves. The overall mood is academic, clear, and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBm-cRdsoZyJHDRd2YGDt9ZR69KPasG-0tMcK2TYrj38iOfLZeq7to2FBMPHDbHNVgisdefG0oMFb-a04uSSaYoCItbeiYJVyZ4QOZj9Z5r82e7RuTEbZyTz0IGuKcYryDag-buctou0gIU-iKe8JVV3_cB_MQnjJtjNErMIE4NwiIdXIvEfMGo-ifrINtFtOyV9lfazK-7IaUvtLVvuSjrlopXeiogU0KPxMEA6XzVRRlyF1yndQZZkmWLGaoBgDoqI33BexsKVNK">
+</div>
+<h4 class="font-label-md text-on-surface truncate">Minimalist Structures</h4>
+<p class="font-label-sm text-on-surface-variant">Kevin Wu</p>
+</div>
+<!-- Small Card 3 -->
+<div class="group cursor-pointer hidden md:block">
+<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3 shadow-sm border border-outline-variant/30">
+<img alt="Related Book 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vintage-inspired yet modern book cover for a classic literature or theory book, using rich earth tones and textured cream paper. The book lies on a polished wooden library table under a warm, focused lamp. The lighting creates a serene, intellectual atmosphere suitable for a scholarly library ecosystem. Elegant and high-quality photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA6hivkXoaJpcYzfo5MO_jUgoo0ul0hZ60LBdLeeR3Gvc2bYxxfnFahEvL4mHMowB2DQXN_C8xvFp_fu0wscAnSQ5F2Bjbcj_GoSdteZ66i00yQHDg3IP9waAFZnUmadlNx4vwziE2pRT2-m2PjxtCEUkv0wWngiOp_qXxC632mHOOfdrc1jeoRn9b53GSeg0JXJKIUUeH9qh_xVPOn26ah-6ZO41R3uTnSsD2U1ELQa1LUPHu7EIEvi2VpEwB3tBFwq7Z3R46m2O9">
+</div>
+<h4 class="font-label-md text-on-surface truncate">The History of Space</h4>
+<p class="font-label-sm text-on-surface-variant">Dr. Alan Thorne</p>
+</div>
+<!-- Small Card 4 -->
+<div class="group cursor-pointer hidden md:block">
+<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3 shadow-sm border border-outline-variant/30">
+<img alt="Related Book 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A stack of modern scholarly journals and books with clean white and blue covers. The focus is on the top book, which features a crisp architectural diagram. The setting is a bright, high-tech library with glass partitions and soft overhead lighting. The visual style is professional, contemporary, and emphasizes clarity and academic reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr-SZ1NW2KF7aCkdJ7IpnPBa1-s6MpoJTgVYrexmMRQ_XAllbvh0sVv_KlfL7fetabpZl6bTvXqqCao4YVCFN4sZsgxImtMFF1beiiNsnS8AGQkj5Dq4L7PoMKhRfmdyBjeMOFDoahgT45Hzegxyo07RfHMCdijgPTip20LkpZmOOeqPsi_5awe4-SrDOORubIUFzaWULPqzKxN-vV5CW7FBOBCkxV_ueVxXNAfIAOBbTitkLllrYXtoPq1ebzur0y_0IPcQREGWNp">
+</div>
+<h4 class="font-label-md text-on-surface truncate">Future Cities</h4>
+<p class="font-label-sm text-on-surface-variant">Elena Rossi</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Persistent Bottom Action Bar (Fixed at bottom) -->
+<div class="fixed bottom-0 left-0 w-full z-50 bg-surface border-t border-outline-variant dark:border-outline-variant shadow-sm h-20 px-margin-mobile flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-on-surface-variant">Tersedia: 4 Buku</span>
+<span class="font-label-md text-secondary font-bold">Gratis untuk Anggota</span>
+</div>
+<button class="bg-secondary-container hover:bg-secondary-container/90 text-on-secondary-container font-bold px-8 py-3 rounded-lg flex items-center gap-2 active:scale-95 transition-transform duration-150 shadow-sm" id="borrowBtn">
+<span class="material-symbols-outlined" data-icon="book_5">book_5</span>
+      Pinjam Buku
+    </button>
+</div>
+<script>
+    document.getElementById('borrowBtn').addEventListener('click', function() {
+      const originalText = this.innerHTML;
+      this.innerHTML = `
+        <span class="animate-spin material-symbols-outlined" data-icon="sync">sync</span>
+        Memproses...
+      `;
+      this.disabled = true;
+      
+      setTimeout(() => {
+        this.innerHTML = `
+          <span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+          Berhasil Dipinjam!
+        `;
+        this.classList.remove('bg-secondary-container');
+        this.classList.add('bg-primary', 'text-on-primary');
+        
+        // Show a temporary snackbar/notification logic could go here
+        alert('Buku berhasil ditambahkan ke daftar pinjaman Anda. Silakan ambil di konter layanan dalam 24 jam.');
+      }, 1500);
+    });
+
+    // Simple interaction for book bookmark
+    const bookmarkBtn = document.querySelector('[data-icon="bookmark"]');
+    let isBookmarked = false;
+    bookmarkBtn.addEventListener('click', function() {
+      isBookmarked = !isBookmarked;
+      if (isBookmarked) {
+        this.style.fontVariationSettings = "'FILL' 1";
+        this.classList.add('text-primary');
+      } else {
+        this.style.fontVariationSettings = "'FILL' 0";
+      }
+    });
+  </script>
+</body></html>

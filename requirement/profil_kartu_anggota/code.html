@@ -1,0 +1,330 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>User Profile | Scholarly Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#6e5c00",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#0e0200",
+            "secondary-fixed-dim": "#e9c400",
+            "surface-container-highest": "#e2e2e2",
+            "outline-variant": "#c1c6d6",
+            "on-primary-fixed-variant": "#004493",
+            "surface": "#f9f9f9",
+            "tertiary-fixed": "#ffdbcb",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#001a41",
+            "surface-tint": "#005bc0",
+            "on-secondary-fixed-variant": "#544600",
+            "surface-container-high": "#e8e8e8",
+            "tertiary": "#9e4300",
+            "primary": "#005bbf",
+            "surface-container-low": "#f3f3f4",
+            "error": "#ba1a1a",
+            "background": "#f9f9f9",
+            "surface-container": "#eeeeee",
+            "on-primary-container": "#ffffff",
+            "primary-container": "#1a73e8",
+            "primary-fixed-dim": "#adc7ff",
+            "on-surface": "#1a1c1c",
+            "secondary-fixed": "#ffe16d",
+            "surface-bright": "#f9f9f9",
+            "secondary": "#705d00",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#c55500",
+            "outline": "#727785",
+            "inverse-on-surface": "#f0f1f1",
+            "on-tertiary-fixed-variant": "#783100",
+            "primary-fixed": "#d8e2ff",
+            "on-surface-variant": "#414754",
+            "inverse-primary": "#adc7ff",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-tertiary-fixed": "#341100",
+            "surface-variant": "#e2e2e2",
+            "inverse-surface": "#2f3131",
+            "tertiary-fixed-dim": "#ffb691",
+            "on-background": "#1a1c1c",
+            "surface-dim": "#dadada",
+            "on-secondary-fixed": "#221b00",
+            "secondary-container": "#fcd400",
+            "on-error": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "stack-sm": "12px",
+            "stack-lg": "48px",
+            "container-max": "1280px",
+            "margin-desktop": "40px",
+            "base": "8px",
+            "margin-mobile": "16px",
+            "stack-md": "24px",
+            "gutter": "24px"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Inter"],
+            "label-md": ["Inter"],
+            "display-lg": ["Inter"],
+            "headline-sm": ["Inter"],
+            "body-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "label-sm": ["Inter"],
+            "headline-md": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+            "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}],
+            "headline-md": ["30px", {"lineHeight": "38px", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+    }
+    body {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-background min-h-screen pb-20 md:pb-0 pt-14">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant fixed top-0 left-0 w-full z-50 flex justify-between items-center h-14 px-margin-mobile md:px-margin-desktop w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<h1 class="font-headline-sm text-headline-sm-mobile font-bold text-primary dark:text-primary-fixed">Scholarly Library</h1>
+</div>
+<div class="hidden md:flex items-center gap-gutter h-full">
+<a class="font-label-md text-on-surface-variant flex items-center h-full hover:bg-surface-container-low transition-colors px-4" href="#">Home</a>
+<a class="font-label-md text-on-surface-variant flex items-center h-full hover:bg-surface-container-low transition-colors px-4" href="#">Search</a>
+<a class="font-label-md text-on-surface-variant flex items-center h-full hover:bg-surface-container-low transition-colors px-4" href="#">My Books</a>
+<a class="font-label-md text-primary border-b-2 border-primary flex items-center h-full px-4 font-bold" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low transition-colors" data-icon="notifications">notifications</button>
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- User Profile Sidebar (Left) -->
+<section class="md:col-span-4 lg:col-span-3 space-y-stack-md">
+<div class="bg-white rounded-lg border border-outline-variant p-stack-md text-center">
+<div class="relative w-32 h-32 mx-auto mb-stack-sm">
+<img alt="Profile Photo" class="w-full h-full object-cover rounded-full border-4 border-primary-fixed" data-alt="A professional headshot of a middle-aged academic man with glasses and a friendly expression. He is wearing a navy blazer over a crisp white shirt. The background is a softly blurred office with floor-to-ceiling bookshelves, evoking a scholarly and intellectual atmosphere. The lighting is soft and natural, coming from a large window to the side, highlighting his professional yet approachable demeanor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQzS_yo39LYGEG3ZSsI3miMlruFu76kQj7zsbH_2_A7R1mKVYYx8LnEKcrUVlzelFLMy5KLzNS6BFoDxNH3e9YLUv3LL0Zlm9sjGw1yXZkbFOPclHtnqMjM1ZhS-N8cXOuFwYPHozGDUEiBZATpvkS6S6thdpYUEUhD1bMZk1sht2gmBCRQTQ3pN2J9lURnsk8IfvrRFUjUdwCXHFj7ZX04sYr7MDflKaE_kx77vuxDUsvF7WCltpUULL0CwmB7nqlfH5Pbd9xlSjw">
+<button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-md hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<h2 class="font-headline-sm text-on-surface">Dr. Julian Sterling</h2>
+<p class="font-label-md text-on-surface-variant mb-4">Senior Research Fellow</p>
+<div class="pt-4 border-t border-outline-variant text-left space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="badge">badge</span>
+<span class="font-label-sm text-on-surface-variant">Member ID:</span>
+<span class="font-label-sm font-bold text-on-surface ml-auto">SL-2024-8891</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-lg" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-sm text-on-surface-variant">Joined:</span>
+<span class="font-label-sm font-bold text-on-surface ml-auto">March 2018</span>
+</div>
+</div>
+</div>
+<!-- Digital Library Card -->
+<div class="bg-primary-container text-white rounded-lg p-6 shadow-md relative overflow-hidden group">
+<!-- Decorative Background Element -->
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-full flex justify-between items-center mb-6">
+<span class="font-label-sm tracking-widest opacity-80 uppercase">Digital Pass</span>
+<span class="material-symbols-outlined" data-icon="nfc">nfc</span>
+</div>
+<div class="bg-white p-3 rounded-lg shadow-inner mb-4">
+<img alt="QR Code" class="w-32 h-32" data-alt="A clean, minimalist high-resolution QR code generated against a stark white background. The QR code represents a secure digital identification token for a library membership. The style is sharp and technical, emphasizing security and modern digital access. It is framed by a subtle, very thin light gray border to ensure it stands out on the card surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn1NHzQeyCR7hxHq9UhxF4etDs_a2jl52VXYavg8btyU8GkZka0jpeCte2gjvaTh8Op6TCKXKHlvSyl0ZeiR5029aa2VxFeYhJQQzdLffuM0W3YRBWxCDBHjl9ADWdLgCndVNl_2osyp68bfJkB_9dHviNDaaPcXpkoNLrPAnJe_Izv2Z6zYn9E7HTHinZzBuqzkKCA_PBbBs_VD8kTHR69-Htv3PJtx4Kh2g-ZnZQ4aiKHiDRykEUtQDPQKBZDlEELyNX7H8mwVM8">
+</div>
+<p class="font-headline-sm tracking-[0.2em] mb-2 font-bold">SCHOLARLY</p>
+<p class="font-label-md opacity-90">JULIAN STERLING</p>
+</div>
+</div>
+</section>
+<!-- Main Content (Right) -->
+<div class="md:col-span-8 lg:col-span-9 space-y-stack-md">
+<!-- Welcome Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-on-surface">Your Library Activity</h3>
+<p class="font-body-md text-on-surface-variant">Track your current loans and upcoming due dates.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-primary text-white rounded-sm font-label-md hover:opacity-90 active:scale-95 transition-all">Renew All</button>
+<button class="px-4 py-2 border border-primary text-primary rounded-sm font-label-md hover:bg-surface-container-low transition-colors">History</button>
+</div>
+</div>
+<!-- Borrowed Books List -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Book Card 1 -->
+<div class="bg-white rounded-lg border border-outline-variant flex overflow-hidden group hover:shadow-sm transition-shadow">
+<div class="w-1/3 min-h-[180px] bg-surface-container">
+<img alt="Book Cover" class="w-full h-full object-cover" data-alt="A sophisticated book cover for a title on modern philosophy and digital ethics. The cover features an abstract geometric design with interlocking crystalline structures in shades of navy blue and metallic silver. The lighting is dramatic, casting soft shadows across the book's matte finish. The design is clean and scholarly, suitable for a prestigious academic press, capturing the intellectual weight and contemporary relevance of the subject matter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1Vc_dtnxdxIUv28Y3PTCwqmQpgwqcUQrvP8MwSJKowvJOLb7DyRN2GVt2BHn5jQNKqx1E9VKpfH56Plhccvw9AreE5dg-Oi3RAi5jZrje-9GUVOWUlXIy7CyQ87dBh1KCkvCE5X1LyGKpQQcNIafUaJv6A10yyY8egx3db1ME2wqttomDXUDYz_ALuiKGwHHMZtguk7BnAOq949N4t0PZcQP-ZflQL34ivHmBo3bezNP-HRfFfrdKBgbPAGO9YY4mqcZD7FqH2rHq">
+</div>
+<div class="w-2/3 p-4 flex flex-col">
+<div class="flex-1">
+<div class="inline-block px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-sm text-[10px] font-bold uppercase mb-2">Digital Ethics</div>
+<h4 class="font-headline-sm text-lg leading-tight mb-1">Crystalline Perspectives</h4>
+<p class="font-label-md text-on-surface-variant">by Elena Moradi</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Due Date</p>
+<p class="font-label-md text-error font-bold">Oct 24, 2024</p>
+</div>
+<button class="material-symbols-outlined text-primary p-1 hover:bg-surface-container-low rounded-full transition-colors" data-icon="sync">sync</button>
+</div>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="bg-white rounded-lg border border-outline-variant flex overflow-hidden group hover:shadow-sm transition-shadow">
+<div class="w-1/3 min-h-[180px] bg-surface-container">
+<img alt="Book Cover" class="w-full h-full object-cover" data-alt="An elegant book cover showcasing a legal or historical subject. It features a minimalist layout with gold-foil serif typography set against a deep forest green background. A subtle, textured linen finish is visible on the surface of the book. The image is shot from a slight angle with soft studio lighting that catches the glint of the gold lettering, emphasizing a sense of tradition, authority, and scholarly value." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEj9Q85yAcIFSixajw-uhCEn3o3c8w8qxPSC88nd0nfBr77qNP2DTXSOm6goMWrX8uxoG_2LouYseJkxxVWjMiFvuuGuHveeoeIBMiWGFVQ7zrQqsHB639w5aPJ1NcgTw-N3VIQtMibNLrUx8KexliszNiVRcIwKEUMSTZ9-TEVzn3YrBbllaUS0hmDnDfmm5ZV6VIG3jHNX31ggJU1mhRCJs9G8ZUJYfpwJrI7DYgbsgeGbE27T1jnG_M_CFaOgv1FU19t3k93dKS">
+</div>
+<div class="w-2/3 p-4 flex flex-col">
+<div class="flex-1">
+<div class="inline-block px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-sm text-[10px] font-bold uppercase mb-2">History</div>
+<h4 class="font-headline-sm text-lg leading-tight mb-1">Foundations of Jurisprudence</h4>
+<p class="font-label-md text-on-surface-variant">by Robert T. Vance</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Due Date</p>
+<p class="font-label-md text-primary font-bold">Nov 02, 2024</p>
+</div>
+<button class="material-symbols-outlined text-primary p-1 hover:bg-surface-container-low rounded-full transition-colors" data-icon="sync">sync</button>
+</div>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="bg-white rounded-lg border border-outline-variant flex overflow-hidden group hover:shadow-sm transition-shadow">
+<div class="w-1/3 min-h-[180px] bg-surface-container">
+<img alt="Book Cover" class="w-full h-full object-cover" data-alt="A modern book cover for a work on architectural theory or urban design. The artwork features high-contrast black and white photography of a futuristic building with complex, flowing curves. The composition is dynamic and architectural, with bold, clean typography in a modern sans-serif font. The image feels progressive and intellectually stimulating, representing a bridge between classic study and future-looking innovation in the built environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbQXEXKBX6nIYkJiXVX8qB-TNEgJL8XhAVWCMTt925qXmxNbyWOPurB9wDS5MWbvyt77tpwDKOMFm4vfWHvVPrqspTCYYvfogQ5K5qdGgpH5LXVtPJChEWS5H1m6XExE3I9Y-KJKJSc_oEEE44tyasjjgjsC1KyKvBU2TOKAq9h1vOVlzLaH98C_1R7kG87YamLp07fh4m-LwsychIRPGay0fVIb_EYZaNTU3a5gUlesGPfG0IFy1DkTIh17BTuWdaj7e44wNe1kmi">
+</div>
+<div class="w-2/3 p-4 flex flex-col">
+<div class="flex-1">
+<div class="inline-block px-2 py-0.5 bg-secondary-container text-on-secondary-container rounded-sm text-[10px] font-bold uppercase mb-2">Architecture</div>
+<h4 class="font-headline-sm text-lg leading-tight mb-1">Fluid Structuralism</h4>
+<p class="font-label-md text-on-surface-variant">by Sarah Jenkins</p>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant flex justify-between items-end">
+<div>
+<p class="text-[10px] uppercase font-bold text-on-surface-variant">Due Date</p>
+<p class="font-label-md text-primary font-bold">Nov 15, 2024</p>
+</div>
+<button class="material-symbols-outlined text-primary p-1 hover:bg-surface-container-low rounded-full transition-colors" data-icon="sync">sync</button>
+</div>
+</div>
+</div>
+<!-- Empty Slot/Placeholder for New Loans -->
+<div class="bg-surface-container-low rounded-lg border border-dashed border-outline border-2 flex items-center justify-center min-h-[180px] group hover:bg-white transition-colors cursor-pointer">
+<div class="text-center">
+<span class="material-symbols-outlined text-primary text-4xl mb-2" data-icon="add_circle">add_circle</span>
+<p class="font-label-md text-on-surface-variant">Borrow New Book</p>
+</div>
+</div>
+</div>
+<!-- Account Settings & Privacy -->
+<div class="bg-surface-container-lowest rounded-lg border border-outline-variant p-stack-md mt-stack-lg">
+<h4 class="font-headline-sm text-on-surface mb-4">Membership Preferences</h4>
+<div class="space-y-4">
+<label class="flex items-center justify-between cursor-pointer">
+<span class="font-body-md text-on-surface">Auto-renewal for eligible items</span>
+<div class="relative inline-block w-10 h-5">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-full h-full bg-outline-variant rounded-full peer peer-checked:bg-primary transition-colors"></div>
+<div class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5"></div>
+</div>
+</label>
+<label class="flex items-center justify-between cursor-pointer">
+<span class="font-body-md text-on-surface">Email notifications for upcoming due dates</span>
+<div class="relative inline-block w-10 h-5">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-full h-full bg-outline-variant rounded-full peer peer-checked:bg-primary transition-colors"></div>
+<div class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full transition-transform peer-checked:translate-x-5"></div>
+</div>
+</label>
+<div class="pt-4 flex justify-end">
+<button class="text-error font-label-md flex items-center gap-2 hover:underline">
+<span class="material-symbols-outlined text-sm" data-icon="logout">logout</span>
+                Sign Out
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface dark:bg-surface border-t border-outline-variant dark:border-outline-variant fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 w-full px-margin-mobile shadow-sm">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-label-sm text-label-sm">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="book_5">book_5</span>
+<span class="font-label-sm text-label-sm">My Books</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold active:scale-95 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</a>
+</nav>
+<script>
+    // Simple micro-interaction for the QR card hover
+    const qrCard = document.querySelector('.bg-primary-container');
+    if (qrCard) {
+      qrCard.addEventListener('mousemove', (e) => {
+        const rect = qrCard.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        qrCard.style.setProperty('--mouse-x', `${x}px`);
+        qrCard.style.setProperty('--mouse-y', `${y}px`);
+      });
+    }
+
+    // Toggle logic for simple checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+      checkbox.addEventListener('change', function() {
+        console.log('Setting updated:', this.checked);
+      });
+    });
+  </script>
+</body></html>
